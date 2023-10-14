@@ -1,3 +1,9 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
 #map {
     width: 100%;
     background-image: url('/map.svg');
@@ -8,7 +14,7 @@
 
 #strategy {
     width: 100%;
-    background-image: url('/strategy.png');
+    background-image: url('/strategy.webp');
     aspect-ratio: 1381/450;
     height: auto;
     background-size: contain;
@@ -31,4 +37,8 @@
 
 span {
     display: inline-block;
+}
+
+.no-underline {
+    text-decoration: none;
 }

@@ -1,8 +1,6 @@
 import React from 'react';
 import { AppBar, Grid } from '@mui/material';
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
@@ -12,13 +10,25 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import Image from 'next/image';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import BookIcon from '@mui/icons-material/Book';
 import Link from 'next/link';
 
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = [
+    {
+        label: 'ddd',
+        url: 'dddd',
+    },
+    {
+        label: 'ddd',
+        url: 'dddd',
+    },
+    {
+        label: 'ddd',
+        url: 'dddd',
+    },
+];
 
 export default function DrawerAppBar() {
     //更新関数のインスタンス化
@@ -32,14 +42,37 @@ export default function DrawerAppBar() {
     //Drawerのレンダリング内容
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+            <Link href={'/'} className="no-underline">
+                <Typography
+                    variant="h6"
+                    color="initial"
+                    sx={{ pt: '30px', pb: '20px', borderBottom: 1, borderColor: 'grey.500' }}
+                >
+                    Janken Strategy
+                </Typography>
+            </Link>
+            <Box sx={{ width: '100%', height: '20px' }}></Box>
             <List>
-                {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
+                <ListItem disablePadding>
+                    <ListItemButton
+                        sx={{ textAlign: 'center' }}
+                        onClick={() => {
+                            window.location.href = 'https://janken-test.gitbook.io/blog/';
+                        }}
+                    >
+                        <ListItemText primary="Blog" />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton
+                        sx={{ textAlign: 'center' }}
+                        onClick={() => {
+                            window.location.href = 'https://github.com/Myxogastria0808/janken_app/';
+                        }}
+                    >
+                        <ListItemText primary="GitHub" />
+                    </ListItemButton>
+                </ListItem>
             </List>
         </Box>
     );
@@ -66,9 +99,6 @@ export default function DrawerAppBar() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    {/* <Grid container textAlign="center" sx={{ width: '100%', display: { sm: 'none' } }}>
-                        <Box sx={{ width: '100%', textAlign: 'center' }}>Hello</Box>
-                    </Grid> */}
                     {/*ハンバーガーメニュー End*/}
                     {/* スマホのitem End*/}
                     {/* PCのitem Start*/}
@@ -78,7 +108,9 @@ export default function DrawerAppBar() {
                         justifyContent="left"
                         sx={{ m: 'auto', display: { xs: 'none', sm: 'block' } }}
                     >
-                        <Image src="/header-logo.png" alt="Janken Strategy" width={280} height={60} />
+                        <Link href={'/'}>
+                            <Image src="/header-logo.webp" alt="Janken Strategy" width={280} height={60} />
+                        </Link>
                     </Grid>
                     <Grid
                         container

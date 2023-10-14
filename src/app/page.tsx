@@ -7,7 +7,7 @@ import { Box, Typography, Stack, Button, Grid } from '@mui/material';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import PercentIcon from '@mui/icons-material/Percent';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Header, Detail, Strategy } from './index';
+import { Header, Detail, Strategy, Footer } from './index';
 
 export default function Home() {
     return (
@@ -15,7 +15,7 @@ export default function Home() {
             <Header />
             <Box
                 sx={{
-                    width: '100%',
+                    width: '95%',
                     maxWidth: '1024px',
                     color: 'text.primary',
                     m: 'auto',
@@ -95,15 +95,9 @@ export default function Home() {
                 <Box sx={{ width: '100%', height: '60px' }}></Box>
                 <Strategy />
                 <Box sx={{ width: '100%', height: '60px' }}></Box>
-                <Typography variant="h5" gutterBottom>
-                    <span>Janken Strategyの</span>
-                    <span>詳細な仕組み</span>
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                    Janken Strategyの詳細な仕組みについて、各セクションに分けながら説明します。
-                </Typography>
+                <Detail />
             </Box>
-            <Detail />
+            <Footer />
         </React.Fragment>
     );
 }

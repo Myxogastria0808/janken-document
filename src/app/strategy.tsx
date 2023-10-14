@@ -1,6 +1,6 @@
 import React from 'react';
 import './globals.css';
-import { Box, Typography, Stack, Button, Grid } from '@mui/material';
+import { Typography } from '@mui/material';
 
 export default function Strategy() {
     return (
