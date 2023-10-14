@@ -23,7 +23,7 @@ export default function Home() {
             >
                 <Box sx={{ widht: '100%', height: '110px' }} />
                 <Box textAlign="center">
-                    <Image src="/janken-logo.png" alt="Janken Strategy" width={200} height={200} priority={true} />
+                    <Image src="/janken-logo.webp" alt="Janken Strategy" width={200} height={200} priority={true} />
                     <Box sx={{ widht: '100%', height: '10px' }} />
                     <Typography variant="h4" gutterBottom>
                         Janken Strategy
